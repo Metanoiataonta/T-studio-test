@@ -1,0 +1,156 @@
+@import "init", "reset";
+
+.header {
+    padding-top: 20px;
+    display: flex;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.header div:not(:last-of-type) {
+    margin-right: 40px;
+}
+
+.map__span {
+    font-weight: 600;
+}
+
+.main {
+    padding-top: 40px;
+}
+
+// value.innerText = element[prop];
+// key.innerText = prop;
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1380px;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.list {
+    padding: 5px 20px;
+    list-style-type: none;
+    display: none;
+    border: 1px solid $textColor;
+
+}
+
+.main>.list {
+    padding: 10px 20px;
+    display: block;
+    border: 1px solid $textColor;
+}
+
+.list__item_active>.list {
+    display: block;
+    border-left: 1px solid $textColor;
+    border-top: 1px solid $textColor;
+}
+
+.list__item {
+    cursor: pointer;
+    position: relative;
+    // padding: 0 0px;
+    width: 100%;
+    user-select: none;
+    border-bottom: 1px solid $textColor;
+    color: $textColor;
+
+
+}
+
+.list__item:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.list__item_object::before {
+    padding: 1px 3px;
+    content: '+';
+    border: 1px solid $textColor;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -31px;
+    text-align: center;
+    background-color: $bgColor;
+}
+
+.list__item_object::after {
+    top: 50%;
+    right: 0;
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid $textColor;
+    width: max-content;
+}
+
+
+.list__item_current {
+    color: $currentItemColor;
+}
+
+.list__item_editable {}
+
+.list__item_active:before {
+    content: '-';
+
+}
+
+.list__item_active::after {
+    content: none;
+}
+
+.list__item-info {
+    display: flex;
+
+}
+
+.list__item-key {
+    font-weight: 600;
+}
+
+.list__item-value {
+    max-height: 400px;
+    overflow: auto;
+}
+
+.list__item-key::after {
+    content: ': ';
+    margin-right: 10px;
+}
+
+.context-menu {
+    display: none;
+    position: absolute;
+    width: 200px;
+
+    border: 1px solid $contextMenuColor;
+
+}
+
+.context-menu>button {
+    display: block;
+    padding: 5px 10px;
+    background-color: $bgColor;
+    width: 100%;
+    cursor: pointer;
+
+}
+
+.context-menu>button:not(:last-of-type) {
+    border-bottom: 1px solid $contextMenuColor;
+}
+
+.alerts p {
+    color: $currentItemColor;
+}
